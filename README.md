@@ -51,3 +51,17 @@ adicionar a dependencia ts-node-dev, é uma especie de ''nodemon'' para ts
 
     $> yarn add @types/express -D
 
+
+## Funcionalidades
+
+### Conexões
+
+- Rota para listar o total de conexões realizadas [Landing Page];
+- Rota para criar uma nova conexão;
+
+### Aulas 
+
+- Rota para criar uma aula [Formulario];
+- Rota para listar aulas [TeacherList];
+    - Filtrar por matérias, dia da semana e horários;
+

@@ -3,7 +3,16 @@ require('dotenv').config()
 
 const app = express()
 
-app.get('/hello', (request, response) => {
+//  middlewares
+app.use(express.json())
+
+// Rotas e requisições
+// Corpo (request.body) - Dados para criação ou atualização de registros
+// Route Params - Identificar qual recurso eu quero atualizar ou deletar
+// Query Params - Paginação, filtros, ordenação ...
+
+app.post('/hello', (request, response) => {
+  console.log('POST: ', request.body);
   return response.send('Hello World!')
 })
 
