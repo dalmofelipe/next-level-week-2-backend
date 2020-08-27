@@ -1,67 +1,40 @@
-# next level week #2
+# Next Level Week #2
 
-## Iniciando o projeto
-    $> yarn init
+NLW#2 da Rocketseat
 
-## Criar arquivo ponto de entrada do app
+PROFFY - Agregador de professores para aulas particulares
 
-    $> touch src/server.ts
 
-## Configurando TypeScript
+## Rodar o projeto
 
-instalar typescript para dev
+Entrar no diretório
 
-    $> yarn add typescript -D
+    $> cd backend
 
-criar arquivo de configuração, tsconfig.json
+Instalar depedencias
 
-    $> yarn tsc --init
+    $> yarn install
 
-modificar o target do tsconfig.json, para es2017
+Executar o migrate das tabelas do banco de dados
 
-    {
-        ...
-        "target": "es2017"
-        ...
-    }
+    $> yarn knex:migrate
 
-adicionar a dependencia ts-node-dev, é uma especie de ''nodemon'' para ts
+Executar o script start
 
-    $> yarn add ts-node-dev -D
-
-## configurar script **start** no package.json
-
-    {
-        ...
-        "scripts": {
-            "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts"
-        }
-        ...
-    }
-
---transpile-only - somente converte o codigo typescript para js, sem verificar erros
-
---ignore-watch node_modules - não converter codigo terceiros
-
---respawn - modo watch
-
-## instalar o express e @types/express
-
-    $> yarn add express 
-
-    $> yarn add @types/express -D
+    $> yarn start
+    ou 
+    $> yarn run start
 
 
 ## Funcionalidades
 
 ### Conexões
 
-- Rota para listar o total de conexões realizadas [Landing Page];
+- Rota para listar o total de conexões realizadas (Landing Page);
 - Rota para criar uma nova conexão;
 
 ### Aulas 
 
-- Rota para criar uma aula [Formulario];
-- Rota para listar aulas [TeacherList];
+- Rota para criar uma aula (Formulario);
+- Rota para listar aulas (TeacherList);
     - Filtrar por matérias, dia da semana e horários;
-
