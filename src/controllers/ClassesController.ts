@@ -98,7 +98,7 @@ export default class ClassesController {
       await trx('class_schedule').insert(classSchedule)
   
       // depois que todos os inserts forem concluídos com sucesso,
-      // por meio da transition é concluido e salvo os dados no banco.
+      // por meio da transition, os dados serão salvos no banco.
       await trx.commit()
   
       return res.status(201).send() // created 201

@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import ClassesController from './controllers/ClassesController'
 import ConnectionsController from './controllers/ConnectionsController'
 
@@ -13,11 +13,12 @@ const connectionsController = new ConnectionsController()
 // Route Params - Identificar qual recurso eu quero atualizar ou deletar
 // Query Params - Paginação, filtros, ordenação ...
 
-
-routes.get('/connections', connectionsController.index)
-routes.post('/connections', connectionsController.create)
+routes.get('/', (req: Request, res: Response) => res.send('Os testes testam!'))
 
 routes.get('/classes', classesController.index)
 routes.post('/classes', classesController.create)
+
+routes.get('/connections', connectionsController.index)
+routes.post('/connections', connectionsController.create)
 
 export default routes
